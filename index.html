@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Smart Resume Builder — Create professional resumes instantly with a modern, easy-to-use interface. No sign-up required." />
+  <meta name="keywords" content="resume builder, CV maker, professional resume, free resume generator" />
+  <meta name="author" content="Jindam Lakshitha" />
+  <title>Smart Resume Builder — Create Your Professional Resume</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="header__brand">
+        <img src="assets/logo.png" alt="Smart Resume Builder logo" class="header__logo" />
+        <span class="header__title">Smart Resume Builder</span>
+      </a>
+      <nav class="header__nav">
+        <a href="#builder" class="header__link">Builder</a>
+        <a href="#preview" class="header__link">Preview</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <p class="hero__badge">✨ 100 % Free &middot; No Sign-Up</p>
+      <h1 class="hero__heading">Craft a <span class="gradient-text">Stunning Resume</span> in Minutes</h1>
+      <p class="hero__sub">Fill in your details, hit generate, and download a polished resume — all from your browser.</p>
+      <a href="#builder" class="btn btn--primary btn--lg hero__cta">Start Building &darr;</a>
+    </div>
+    <!-- Decorative blobs -->
+    <div class="hero__blob hero__blob--1"></div>
+    <div class="hero__blob hero__blob--2"></div>
+  </section>
+
+  <!-- ========== BUILDER FORM ========== -->
+  <section class="builder" id="builder">
+    <div class="container">
+      <h2 class="section-title">Build Your Resume</h2>
+      <p class="section-subtitle">Enter your information below. Every field is optional — fill what you need.</p>
+
+      <form id="resumeForm" class="form" autocomplete="off">
+
+        <!-- Personal Information -->
+        <div class="form__card">
+          <div class="form__card-header">
+            <span class="form__card-icon">👤</span>
+            <h3>Personal Information</h3>
+          </div>
+          <div class="form__grid">
+            <div class="form__group">
+              <label for="fullName" class="form__label">Full Name</label>
+              <input type="text" id="fullName" class="form__input" placeholder="e.g. John Doe" />
+            </div>
+            <div class="form__group">
+              <label for="jobTitle" class="form__label">Job Title / Role</label>
+              <input type="text" id="jobTitle" class="form__input" placeholder="e.g. Frontend Developer" />
+            </div>
+            <div class="form__group">
+              <label for="email" class="form__label">Email Address</label>
+              <input type="email" id="email" class="form__input" placeholder="e.g. john@example.com" />
+            </div>
+            <div class="form__group">
+              <label for="phone" class="form__label">Phone Number</label>
+              <input type="tel" id="phone" class="form__input" placeholder="e.g. +91 98765 43210" />
+            </div>
+            <div class="form__group form__group--full">
+              <label for="summary" class="form__label">Professional Summary</label>
+              <textarea id="summary" class="form__input form__textarea" rows="3" placeholder="A brief 2-3 sentence summary about yourself..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="form__card">
+          <div class="form__card-header">
+            <span class="form__card-icon">🎓</span>
+            <h3>Education</h3>
+          </div>
+          <div id="educationEntries">
+            <div class="form__entry" data-index="0">
+              <div class="form__grid">
+                <div class="form__group">
+                  <label class="form__label">Degree / Course</label>
+                  <input type="text" class="form__input edu-degree" placeholder="e.g. B.Tech in Computer Science" />
+                </div>
+                <div class="form__group">
+                  <label class="form__label">Institution</label>
+                  <input type="text" class="form__input edu-institution" placeholder="e.g. MIT" />
+                </div>
+                <div class="form__group">
+                  <label class="form__label">Year / Duration</label>
+                  <input type="text" class="form__input edu-year" placeholder="e.g. 2020 – 2024" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn--ghost btn--sm" id="addEducation">+ Add Education</button>
+        </div>
+
+        <!-- Skills -->
+        <div class="form__card">
+          <div class="form__card-header">
+            <span class="form__card-icon">🛠️</span>
+            <h3>Skills</h3>
+          </div>
+          <div class="form__group">
+            <label for="skills" class="form__label">Skills (comma-separated)</label>
+            <input type="text" id="skills" class="form__input" placeholder="e.g. HTML, CSS, JavaScript, React, Node.js" />
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="form__card">
+          <div class="form__card-header">
+            <span class="form__card-icon">💼</span>
+            <h3>Work Experience</h3>
+          </div>
+          <div id="experienceEntries">
+            <div class="form__entry" data-index="0">
+              <div class="form__grid">
+                <div class="form__group">
+                  <label class="form__label">Job Title</label>
+                  <input type="text" class="form__input exp-title" placeholder="e.g. Software Engineer" />
+                </div>
+                <div class="form__group">
+                  <label class="form__label">Company</label>
+                  <input type="text" class="form__input exp-company" placeholder="e.g. Google" />
+                </div>
+                <div class="form__group">
+                  <label class="form__label">Duration</label>
+                  <input type="text" class="form__input exp-duration" placeholder="e.g. Jan 2022 – Present" />
+                </div>
+                <div class="form__group form__group--full">
+                  <label class="form__label">Description</label>
+                  <textarea class="form__input form__textarea exp-desc" rows="2" placeholder="Key responsibilities and achievements..."></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn--ghost btn--sm" id="addExperience">+ Add Experience</button>
+        </div>
+
+        <!-- Actions -->
+        <div class="form__actions">
+          <button type="submit" class="btn btn--primary btn--lg" id="generateBtn">
+            <span class="btn__icon">⚡</span> Generate Resume
+          </button>
+          <button type="button" class="btn btn--outline btn--lg" id="clearBtn">
+            <span class="btn__icon">🗑️</span> Clear All
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== PREVIEW ========== -->
+  <section class="preview-section" id="preview">
+    <div class="container">
+      <h2 class="section-title">Resume Preview</h2>
+      <p class="section-subtitle" id="previewPlaceholder">Fill the form above and click <strong>Generate Resume</strong> to see your resume here.</p>
+
+      <div id="resumeOutput" class="resume" style="display:none;">
+        <!-- This will be populated by JS -->
+      </div>
+
+      <div class="preview-actions" id="previewActions" style="display:none;">
+        <button class="btn btn--primary btn--lg" id="downloadBtn">
+          <span class="btn__icon">📥</span> Download Resume
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Smart Resume Builder" class="footer__logo" />
+        <span class="footer__name">Smart Resume Builder</span>
+      </div>
+
+      <div class="footer__developer">
+        <p class="footer__dev-name">Developed by <strong>Jindam Lakshitha</strong></p>
+        <p class="footer__dev-email">📧 <a href="mailto:jindamlakshitha@gmail.com">jindamlakshitha@gmail.com</a></p>
+      </div>
+
+      <div class="footer__cta">
+        <a href="https://digitalheroesco.com" target="_blank" rel="noopener noreferrer" class="btn btn--hero">
+          Built for Digital Heroes
+        </a>
+      </div>
+
+      <p class="footer__copy">&copy; 2026 Smart Resume Builder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

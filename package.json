@@ -1,0 +1,25 @@
+{
+  "name": "smart-resume-builder",
+  "version": "1.0.0",
+  "description": "A modern, responsive resume builder — runs entirely in the browser with no backend required.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "resume",
+    "builder",
+    "cv",
+    "html",
+    "css",
+    "javascript",
+    "static-site"
+  ],
+  "author": "Jindam Lakshitha <jindamlakshitha@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/smart-resume-builder.git"
+  }
+}
